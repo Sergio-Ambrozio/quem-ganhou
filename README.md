@@ -20,6 +20,8 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 `/admin` is locked. Set `ADMIN_PASSWORD` in the environment (never commit it). The browser will prompt for HTTP Basic Auth; any username works, the password must match. If `ADMIN_PASSWORD` is unset, `/admin` stays closed. Public pages (`/`, `/resultado`, voting) do not use this password.
 
+Authenticated ingest: `POST /api/admin/discussoes` uses the same HTTP Basic password and creates a discussão the same way `/admin` does. Body: `{ "titulo": string, "descricao"?: string, "personalidade_a_id": string, "personalidade_b_id": string }`.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
