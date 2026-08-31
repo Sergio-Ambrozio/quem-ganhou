@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Football-themed color palette */
+  --color-field: #2D5016;
+  --color-field-light: #3A6B1E;
+  --color-field-dark: #1E3A0E;
+  --color-pitch: #4A8C2A;
+  --color-whistle: #F5C518;
+  --color-whistle-dark: #D4A810;
+  --color-card-yellow: #FFD700;
+  --color-card-red: #DC2626;
+  --color-white: #FFFFFF;
+  --color-chalk: #F5F5F0;
+  --color-dark: #1A1A1A;
+  --color-gray: #6B7280;
+  --color-gray-light: #E5E7EB;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Semantic colors */
+  --color-background: var(--color-chalk);
+  --color-foreground: var(--color-dark);
+  --color-primary: var(--color-field);
+  --color-primary-light: var(--color-field-light);
+  --color-primary-dark: var(--color-field-dark);
+  --color-accent: var(--color-whistle);
+  --color-accent-dark: var(--color-whistle-dark);
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Football field line pattern for decorative elements */
+.field-lines {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Center circle decorative element */
+.field-circle {
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
 }
